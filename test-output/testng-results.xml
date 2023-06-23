@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-06-23T15:51:57 IST" name="Default suite" finished-at="2023-06-23T15:52:17 IST" duration-ms="20247">
+    <groups>
+    </groups>
+    <test started-at="2023-06-23T15:51:57 IST" name="Default test" finished-at="2023-06-23T15:52:17 IST" duration-ms="20247">
+      <class name="TestCases.TC_8">
+        <test-method is-config="true" signature="LaunchingBrowser()[pri:0, instance:TestCases.TC_8@41a0aa7d]" started-at="2023-06-23T15:51:57 IST" name="LaunchingBrowser" finished-at="2023-06-23T15:51:59 IST" duration-ms="1442" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchingBrowser -->
+        <test-method is-config="true" signature="navigateToApplication()[pri:0, instance:TestCases.TC_8@41a0aa7d]" started-at="2023-06-23T15:51:59 IST" name="navigateToApplication" finished-at="2023-06-23T15:51:59 IST" duration-ms="772" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToApplication -->
+        <test-method signature="LeadWithMandatoryPage()[pri:0, instance:TestCases.TC_8@41a0aa7d]" started-at="2023-06-23T15:51:59 IST" name="LeadWithMandatoryPage" finished-at="2023-06-23T15:52:17 IST" duration-ms="17834" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LeadWithMandatoryPage -->
+        <test-method is-config="true" signature="teardownThheBrowser()[pri:0, instance:TestCases.TC_8@41a0aa7d]" started-at="2023-06-23T15:52:17 IST" name="teardownThheBrowser" finished-at="2023-06-23T15:52:17 IST" duration-ms="160" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardownThheBrowser -->
+      </class> <!-- TestCases.TC_8 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
