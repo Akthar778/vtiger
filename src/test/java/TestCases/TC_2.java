@@ -8,7 +8,7 @@ import GenericLibrary.baseClass;
 import POMpage.CreateNewOrganisationage;
 
 public class TC_2 extends baseClass {
-	
+	//pass
 	@Test
 	public void OrganisationPageValidation() throws IOException {
 		

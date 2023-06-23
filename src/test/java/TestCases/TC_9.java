@@ -15,7 +15,7 @@ import com.fasterxml.jackson.core.sym.Name;
 import GenericLibrary.baseClass;
 
 public class TC_9 extends baseClass {
-
+   //fail
 	@Test
 	public void LeadWithMandatoryPage() throws IOException, InterruptedException {
 		
@@ -27,9 +27,14 @@ public class TC_9 extends baseClass {
 		home.getLeadButton().click();
 
 		
+		//drop down 
 		
-		
-		
+		home.getQucikCreateDropdown().click();
+		Thread.sleep(3000);
+		utility.handlingDropdown(home.getEventSelectDropDown(), 5);
+		System.out.println("aaaaaa");
+		Thread.sleep(3000);
+
 		//Logout
 		
 		utility.mouseHoveringOnElement(lead.getLeadAdminstractionButtonHover());

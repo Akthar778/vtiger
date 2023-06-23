@@ -61,7 +61,9 @@ public class webDriverUtility extends baseClass implements IAutoconstant{
 	public void handlingDropdown(WebElement dropdown, int index) {
 		Select select =new Select(dropdown);
 		select.selectByIndex(index);
+		
 	}
+	
 	public void scrollingAction(int x,int y) {
 		JavascriptExecutor js =(JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy("+x+","+y+")");

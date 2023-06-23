@@ -8,7 +8,7 @@ import GenericLibrary.*;
 import POMpage.LoginPage;
 
 public class TC_01 extends baseClass{
-
+    //pass
 	@Test
 	public void validatingLoginFunctionality() throws IOException {
 		login.getUserNameTF().sendKeys(ppt.readingDataFromPropertiesFile("username"));

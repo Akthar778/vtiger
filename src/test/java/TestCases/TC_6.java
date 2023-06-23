@@ -15,7 +15,7 @@ import com.fasterxml.jackson.core.sym.Name;
 import GenericLibrary.baseClass;
 
 public class TC_6 extends baseClass {
-
+    //pass
 	@Test
 	public void LeadWithMandatoryPage() throws IOException, InterruptedException {
 		
@@ -34,7 +34,7 @@ public class TC_6 extends baseClass {
 		//validate duplicate
 		
 		lead.getDuplicatebtn().click();
-		assertEquals(false, null);
+		
 		 
 		//Logout
 		

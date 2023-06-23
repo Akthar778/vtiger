@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import GenericLibrary.baseClass;
 
 public class TC_4 extends baseClass {
-
+    //pass
 	@Test
 	public void contactsWithMandatoryField() throws IOException {
 		login.getUserNameTF().sendKeys(ppt.readingDataFromPropertiesFile("username"));

@@ -8,7 +8,7 @@ import GenericLibrary.baseClass;
 import POMpage.LoginPage;
 
 public class TC_3 extends baseClass {
-
+    //pass
 	@Test
 	public void CreateOrgWithTypeAndIndValidation() throws IOException {
 		

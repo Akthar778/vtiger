@@ -7,6 +7,22 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
 
+	public WebElement getEventSelectDropDown() {
+		return EventSelectDropDown;
+	}
+
+
+
+	public WebElement getQucikCreateDropdown() {
+		return qucikCreateDropdown;
+	}
+
+
+
+	@FindBy(xpath = "//option[@value='Events']")
+	private WebElement EventSelectDropDown;
+	
+	
 	@FindBy(xpath = "(//a[text()='Leads'])[1]")
 	private WebElement leadButton;
 	
