@@ -21,6 +21,10 @@ import POMpage.LoginPage;
 import POMpage.OrganisationInformationPage;
 import POMpage.OrganisationPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pom_page.CreateOrganizationPageClass;
+import pom_page.CreatingContactpageClass;
+import pom_page.HomePageClass;
+import pom_page.OrganizationsPageClass;
 
 public class baseClass {
 	public static WebDriver driver;
@@ -35,6 +39,13 @@ public class baseClass {
 	public OrganisationInformationPage OrgInfo;
 	public OrganisationPage OrgPage;
 	public CreatecontactPage createcontPage;
+
+
+	//class practice 
+	public HomePageClass homepage;
+	public OrganizationsPageClass orgpage;
+	public CreateOrganizationPageClass createorgclass;
+	public CreatingContactpageClass createcontact;
 
 	@BeforeClass(alwaysRun = true)
 	public void LaunchingBrowser() throws IOException {
@@ -52,6 +63,7 @@ public class baseClass {
 		driver.manage().window().maximize();
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
 		leadpage = new CreateNewLeadPage(driver);
 		login = new LoginPage(driver);
 		home = new HomePage(driver);
@@ -65,10 +77,23 @@ public class baseClass {
 	@BeforeMethod(alwaysRun = true)
 	public void navigateToApplication() throws IOException {
 		driver.get(ppt.readingDataFromPropertiesFile("url"));
+		login.getUserNameTF().sendKeys(ppt.readingDataFromPropertiesFile("username"));
+		login.getPasswordTF().sendKeys(ppt.readingDataFromPropertiesFile("password"));
+		login.getLoginclickButton().click();
+
+		homepage=new HomePageClass(driver);
+		orgpage=new OrganizationsPageClass(driver);
+		createorgclass=new CreateOrganizationPageClass(driver);
+		createcontact=new CreatingContactpageClass(driver);
+
+
 	}
 
 	@AfterClass(alwaysRun = true)
-	public void teardownThheBrowser() {
+	public void teardownThheBrowser() throws InterruptedException {
+		utility.mouseHoveringOnElement(home.getAdministratorButton());
+		Thread.sleep(3000);
+		home.getSignout().click();
 		driver.quit();
 	}
 

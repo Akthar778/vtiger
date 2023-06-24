@@ -53,11 +53,11 @@ public class webDriverUtility extends baseClass implements IAutoconstant{
 	public void handlingDropdown(WebElement dropdown, String value) {
 		Select select =new Select(dropdown);
 		try {
-			select.selectByVisibleText(value);
-		}catch(NoSuchElementException e) {
 			select.selectByValue(value);
+		}catch(NoSuchElementException e) {
+			select.selectByVisibleText(value);
 		}
-	}
+	}	
 	public void handlingDropdown(WebElement dropdown, int index) {
 		Select select =new Select(dropdown);
 		select.selectByIndex(index);
@@ -115,7 +115,20 @@ public class webDriverUtility extends baseClass implements IAutoconstant{
 			}
 		}
 	}
-	
+	//dedicatedly for vtiger
+	public void switchingtargetPage(Set<String> allWindowId, WebElement element) {
+		for(String id:allWindowId) {
+			driver.switchTo().window(id);
+			if(element.isDisplayed()) {
+				element.click();
+				break;
+			}
+			else {
+				driver.close();
+			}
+		}
+		
+	}
 	public static String takingScreenshot(String screenshotName) {
 		TakesScreenshot ss =(TakesScreenshot) driver;
 		File photo =ss.getScreenshotAs(OutputType.FILE);

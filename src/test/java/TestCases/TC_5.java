@@ -16,10 +16,6 @@ public class TC_5 extends baseClass {
     //fail
 	@Test
 	public void CreateExistingOrganisation() throws IOException, InterruptedException {
-
-		login.getUserNameTF().sendKeys(ppt.readingDataFromPropertiesFile("username"));
-		login.getPasswordTF().sendKeys(ppt.readingDataFromPropertiesFile("password"));
-		login.getLoginclickButton().click();
 		home.getContactbtn().click();
 		OrgPage.getPlusbtn().click();
 		leadpage.getLastName().sendKeys(ppt.readingDataFromPropertiesFile("lastname"));
