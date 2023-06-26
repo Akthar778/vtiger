@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="createOrganizationClass.Contactstest">
+      <class name="createOrganizationClass.CreateOrganizationClass">
         <methods>
           <include name="navigateToApplication"/>
           <include name="LaunchingBrowser"/>
           <include name="teardownThheBrowser"/>
-          <include name="creatingcontatcWithexsistingOrg"/>
+          <include name="organizationcreating" invocation-numbers="0 1 2"/>
         </methods>
-      </class> <!-- createOrganizationClass.Contactstest -->
+      </class> <!-- createOrganizationClass.CreateOrganizationClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

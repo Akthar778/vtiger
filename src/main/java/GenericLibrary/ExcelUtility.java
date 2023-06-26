@@ -21,10 +21,10 @@ public class ExcelUtility {
 	@DataProvider(name ="testdata")
 	public Object[][] readingMultipleData() throws EncryptedDocumentException, IOException{
 		
-		File file = new File("./src/main/resources/commonData.properties");
+		File file = new File("./src/test/resources/multipledata.xlsx");
 		Workbook workbook = WorkbookFactory.create(file);
 		
-		Sheet sheet = workbook.getSheet("Sheet1");
+		Sheet sheet = workbook.getSheet("organization");
 		int rowCount = sheet.getPhysicalNumberOfRows();
 		int cellCount = sheet.getRow(0).getPhysicalNumberOfCells();
 		Object[][]data= new Object[rowCount][cellCount];
@@ -37,4 +37,6 @@ public class ExcelUtility {
 		}		
 		return data; 	
 	}
+	
+	
 }

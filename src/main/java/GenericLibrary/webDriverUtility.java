@@ -98,6 +98,9 @@ public class webDriverUtility extends baseClass implements IAutoconstant{
 	public void switchingBackToMain() {
 		driver.switchTo().defaultContent();
 	}
+	public void switchingBackToMain(String WindowID) {
+		driver.switchTo().window(WindowID);
+	}
 	
 	public Alert switchToAlert() {
 		Alert alert =driver.switchTo().alert();
@@ -115,19 +118,11 @@ public class webDriverUtility extends baseClass implements IAutoconstant{
 			}
 		}
 	}
-	//dedicatedly for vtiger
-	public void switchingtargetPage(Set<String> allWindowId, WebElement element) {
+	public void switchingtargetPage(Set<String> allWindowId, String parentId) {
+		allWindowId.remove(parentId);
 		for(String id:allWindowId) {
 			driver.switchTo().window(id);
-			if(element.isDisplayed()) {
-				element.click();
-				break;
-			}
-			else {
-				driver.close();
-			}
 		}
-		
 	}
 	public static String takingScreenshot(String screenshotName) {
 		TakesScreenshot ss =(TakesScreenshot) driver;

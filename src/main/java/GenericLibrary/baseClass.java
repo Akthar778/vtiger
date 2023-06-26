@@ -62,6 +62,8 @@ public class baseClass {
 		}
 		driver.manage().window().maximize();
 
+		driver.get(ppt.readingDataFromPropertiesFile("url"));
+
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		leadpage = new CreateNewLeadPage(driver);
@@ -72,21 +74,20 @@ public class baseClass {
 		OrgInfo = new OrganisationInformationPage(driver);
 		OrgPage = new OrganisationPage(driver);
 		createcontPage = new CreatecontactPage(driver);
-	}
 
-	@BeforeMethod(alwaysRun = true)
-	public void navigateToApplication() throws IOException {
-		driver.get(ppt.readingDataFromPropertiesFile("url"));
+
 		login.getUserNameTF().sendKeys(ppt.readingDataFromPropertiesFile("username"));
 		login.getPasswordTF().sendKeys(ppt.readingDataFromPropertiesFile("password"));
 		login.getLoginclickButton().click();
 
+	}
+
+	@BeforeMethod(alwaysRun = true)
+	public void navigateToApplication() throws IOException {		
 		homepage=new HomePageClass(driver);
 		orgpage=new OrganizationsPageClass(driver);
 		createorgclass=new CreateOrganizationPageClass(driver);
 		createcontact=new CreatingContactpageClass(driver);
-
-
 	}
 
 	@AfterClass(alwaysRun = true)

@@ -2,16 +2,17 @@ package createOrganizationClass;
 
 import org.testng.annotations.Test;
 
+import GenericLibrary.ExcelUtility;
 import GenericLibrary.baseClass;
 
 public class CreateOrganizationClass extends baseClass{
-	@Test
-	public void organizationcreating() throws InterruptedException {
+	@Test(dataProvider = "testdata", dataProviderClass = ExcelUtility.class)
+	public void organizationcreating(String data) throws InterruptedException {
 		homepage.getOrganizationsLink().click();
 
 		orgpage.getCreateOrganizationIcon().click();
 
-		createorgclass.getOrganizationNameTF().sendKeys("demo12");
+		createorgclass.getOrganizationNameTF().sendKeys(data);
 
 		utility.selectReference(createorgclass.getIndustryDropdown()).selectByValue("Banking");
 
@@ -21,19 +22,18 @@ public class CreateOrganizationClass extends baseClass{
 
 		createorgclass.getGroupRadioButton().click();
 
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 
-		utility.handlingDropdown(createorgclass.getAssignedtoDropdon(), "Support Group");
+		utility.handlingDropdown(createorgclass.getAssignedtoDropdon(), 1);
 		
 		createorgclass.getSavebutton().click();	
 		
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
-		if(createorgclass.getFinalConfirmationtext().getText().contains("demo12")) {
+		if(createorgclass.getFinalConfirmationtext().getText().contains(data)) {
 			System.out.println("testcase passed");
 		}else {
 			System.out.println("testcase failed");
 		}		
-
 	}
 }
