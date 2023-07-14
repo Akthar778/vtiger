@@ -13,7 +13,7 @@ import com.fasterxml.jackson.core.sym.Name;
 import GenericLibrary.baseClass;
 
 public class TC_5 extends baseClass {
-    //fail
+	//fail
 	@Test
 	public void CreateExistingOrganisation() throws IOException, InterruptedException {
 		home.getContactbtn().click();
@@ -22,20 +22,20 @@ public class TC_5 extends baseClass {
 		OrgPage.getOrganisationbtn().sendKeys(ppt.readingDataFromPropertiesFile("OrganisationName"));
 		createcontPage.getOrgPlusBtn().click();
 		Thread.sleep(3000);
-  //WebElement testingToVerifiy = driver.findElement(By.xpath("//a[@id='1']"));
+		//WebElement testingToVerifiy = driver.findElement(By.xpath("//a[@id='1']"));
 
 
-String winHandleBefore = driver.getWindowHandle();
-for(String winHandle : driver.getWindowHandles()){
-    driver.switchTo().window(winHandle);
-}
+		String winHandleBefore = driver.getWindowHandle();
+		for(String winHandle : driver.getWindowHandles()){
+			driver.switchTo().window(winHandle);
+		}
 
-//driver.findElement(By.name("search_text")).sendKeys("akthar");
-	//createcontPage.getSelectExistCompany().click();
+		//driver.findElement(By.name("search_text")).sendKeys("akthar");
+		//createcontPage.getSelectExistCompany().click();
 
 
 		System.out.println("switch frame sucess");
-		
+
 		Thread.sleep(3000);
 		createcontPage.getSelectExistCompany().click();
 		driver.switchTo().defaultContent();

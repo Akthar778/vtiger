@@ -1,7 +1,8 @@
 package GenericLibrary;
 
-import java.io.IOException;
 
+
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -24,6 +25,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import pom_page.CreateOrganizationPageClass;
 import pom_page.CreatingContactpageClass;
 import pom_page.HomePageClass;
+import pom_page.Leadspage;
 import pom_page.OrganizationsPageClass;
 
 public class baseClass {
@@ -40,12 +42,12 @@ public class baseClass {
 	public OrganisationPage OrgPage;
 	public CreatecontactPage createcontPage;
 
-
 	//class practice 
 	public HomePageClass homepage;
 	public OrganizationsPageClass orgpage;
 	public CreateOrganizationPageClass createorgclass;
 	public CreatingContactpageClass createcontact;
+	public  Leadspage createleadsPage;
 
 	@BeforeClass(alwaysRun = true)
 	public void LaunchingBrowser() throws IOException {
@@ -88,6 +90,7 @@ public class baseClass {
 		orgpage=new OrganizationsPageClass(driver);
 		createorgclass=new CreateOrganizationPageClass(driver);
 		createcontact=new CreatingContactpageClass(driver);
+		createleadsPage=new Leadspage(driver);
 	}
 
 	@AfterClass(alwaysRun = true)

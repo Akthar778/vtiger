@@ -16,6 +16,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class webDriverUtility extends baseClass implements IAutoconstant{
+	
+	//here we are going to develop actions,dropdwon,popup,switch,alerts
 
 	
 	public void DragAndDrop(WebElement src,WebElement Destination) {
@@ -123,23 +125,6 @@ public class webDriverUtility extends baseClass implements IAutoconstant{
 		for(String id:allWindowId) {
 			driver.switchTo().window(id);
 		}
-	}
-	public static String takingScreenshot(String screenshotName) {
-		TakesScreenshot ss =(TakesScreenshot) driver;
-		File photo =ss.getScreenshotAs(OutputType.FILE);
-		String ldt = LocalDateTime.now().toString().replace(":", "-");
-		
-		String path = System.getProperty("user.dir")+SSPATH+screenshotName+""+ldt+".png";
-		File destination=new File(path);
-		
-		try {
-			FileUtils.copyFile(photo, destination);
-		} catch (IOException e) {
-			
-			e.printStackTrace();
-		}
-		return path;
-		
 	}
 	
 }

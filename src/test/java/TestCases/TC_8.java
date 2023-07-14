@@ -21,10 +21,12 @@ public class TC_8 extends baseClass {
 		
 		//login
 		
-		login.getUserNameTF().sendKeys(ppt.readingDataFromPropertiesFile("username"));
-		login.getPasswordTF().sendKeys(ppt.readingDataFromPropertiesFile("password"));
-		login.getLoginclickButton().click();
-		home.getLeadButton().click();
+		/*
+		 * login.getUserNameTF().sendKeys(ppt.readingDataFromPropertiesFile("username"))
+		 * ;
+		 * login.getPasswordTF().sendKeys(ppt.readingDataFromPropertiesFile("password"))
+		 * ; login.getLoginclickButton().click();
+		 */	home.getLeadButton().click();
 		
 		
 		//delete existing leads
@@ -41,10 +43,10 @@ public class TC_8 extends baseClass {
 		 
 		//Logout
 		
-		utility.mouseHoveringOnElement(lead.getLeadAdminstractionButtonHover());
-		lead.getLeadpagelogout2().click();
-		Thread.sleep(3000);
-		
+		/*
+		 * utility.mouseHoveringOnElement(lead.getLeadAdminstractionButtonHover());
+		 * lead.getLeadpagelogout2().click(); Thread.sleep(3000);
+		 */
 	}	
 
 

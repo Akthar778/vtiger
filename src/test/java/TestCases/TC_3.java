@@ -2,19 +2,20 @@ package TestCases;
 
 import java.io.IOException;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import GenericLibrary.baseClass;
 import POMpage.LoginPage;
-
+@Listeners(GenericLibrary.ItestListenderImplementaioncls.class)
 public class TC_3 extends baseClass {
     //pass
 	@Test
 	public void CreateOrgWithTypeAndIndValidation() throws IOException {
 		
-		login.getUserNameTF().sendKeys(ppt.readingDataFromPropertiesFile("username"));
-		login.getPasswordTF().sendKeys(ppt.readingDataFromPropertiesFile("password"));
-		login.getLoginclickButton().click();
+//		login.getUserNameTF().sendKeys(ppt.readingDataFromPropertiesFile("username"));
+//		login.getPasswordTF().sendKeys(ppt.readingDataFromPropertiesFile("password"));
+//		login.getLoginclickButton().click();
 		OrgPage.getOrganisationbtn().click();
 		OrgPage.getPlusbtn().click();
 		CreatOrgnisationPage.getOrganisationName().sendKeys(ppt.readingDataFromPropertiesFile("OrganisationName"));
@@ -22,7 +23,7 @@ public class TC_3 extends baseClass {
 		utility.handlingDropdown(CreatOrgnisationPage.getTypebtn(), "Analyst");
 		CreatOrgnisationPage.getSavebtn().click();
 		
-		utility.mouseHoveringOnElement(home.getAdministratorButton());
-		home.getSignout().click();
+//		utility.mouseHoveringOnElement(home.getAdministratorButton());
+//		home.getSignout().click();
 	}
 }

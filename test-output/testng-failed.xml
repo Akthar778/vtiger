@@ -3,14 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="createOrganizationClass.CreateOrganizationClass">
+      <class name="ExtendRepotPractice.ListenersClass">
         <methods>
-          <include name="navigateToApplication"/>
-          <include name="LaunchingBrowser"/>
-          <include name="teardownThheBrowser"/>
-          <include name="organizationcreating" invocation-numbers="0 1 2"/>
+          <include name="demoForListener2"/>
         </methods>
-      </class> <!-- createOrganizationClass.CreateOrganizationClass -->
+      </class> <!-- ExtendRepotPractice.ListenersClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
